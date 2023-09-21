@@ -41,6 +41,8 @@ a{color:#09d}a:active{color:#f00}a:hover{color:#f90}
 </form>
 <br>' . $result . '
 <br><br>
+<a href="https://github.com/simenoff/imageParser" target="_blank">https://github.com/simenoff/imageParser</a>
+<br>
 <a href="https://hh.ru/resume/3e5f8068ff0ba7e4bf0039ed1f495877344764" target="_blank">https://hh.ru/resume/3e5f8068ff0ba7e4bf0039ed1f495877344764</a>
 </div></div>
 </body>
