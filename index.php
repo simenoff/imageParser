@@ -87,7 +87,7 @@ function parser(string $url): string {
     if (empty(parse_url($url, PHP_URL_PATH)))
         $full_url .= '/';
     else
-        $full_url .= PHP_URL_PATH;
+        $full_url .= parse_url($url, PHP_URL_PATH);
 
     foreach ($images_url as &$iurl) {
 
