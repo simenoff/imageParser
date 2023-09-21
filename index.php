@@ -61,7 +61,7 @@ function parser(string $url): string {
         return 'URL недоступен';
 
     $page = preg_replace('/<script[^>]*>.+<\/script>/Usi', '', $page); // Удаляем коды счётчиков
-    $page = preg_replace('/<noscript[^>]*>.+<\/noscript>/Usi', '', $page); // Удаляем коды счётчиков
+    $page = preg_replace('/<noscript[^>]*>.+<\/noscript>/Usi', '', $page); // 
 
     $html_dom = new simple_html_dom();
     $html_dom->load($page);
@@ -70,7 +70,7 @@ function parser(string $url): string {
 
     $images_url = array();
     foreach ($images as $img)
-        if ($img->src != '' && stripos($img->src, 'data:image') === false)
+        if ($img->src != '' && stripos($img->src, 'data:image') === false) // Пропускаем пустые URL и внедрённые изображения
             $images_url[] = $img->src;
 
     $html_dom->clear();
