@@ -18,10 +18,12 @@ if (!empty($_GET['url'])) {
     $result = parser($url);
 }
 
-echo '<!DOCTYPE html><html lang="ru">
+echo '
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-<title>Image Parser</title>
-<style>
+    <title>Image Parser</title>
+    <style>
 body{font:18px verdana,arial;text-align:center}
 #center{display:inline-block}
 input{font:18px verdana,arial}
@@ -31,20 +33,22 @@ table{border-collapse: collapse}
 td{padding:15px;border:1px #eee solid}
 img{max-width:350px}
 a{color:#09d}a:active{color:#f00}a:hover{color:#f90}
-</style>
+    </style>
 </head>
 <body>
-<div id="center"><div style="display:table">
-<h2>Image Parser</h2>
-<form>
-<input type="url" name="url" id="url" value="' . $url . '" required autofocus>&nbsp;<input id="submit" type="submit" value="Go">
-</form>
-<br>' . $result . '
-<br><br>
-<a href="https://github.com/simenoff/imageParser" target="_blank">https://github.com/simenoff/imageParser</a>
-<br><br>
-<a href="https://hh.ru/resume/3e5f8068ff0ba7e4bf0039ed1f495877344764" target="_blank">https://hh.ru/resume/3e5f8068ff0ba7e4bf0039ed1f495877344764</a>
-</div></div>
+<div id="center">
+    <div style="display:table">
+        <h2>Image Parser</h2>
+        <form>
+            <input type="url" name="url" id="url" value="' . $url . '" required autofocus>&nbsp;<input id="submit" type="submit" value="Go">
+        </form>
+        <br>' . $result . '
+        <br><br>
+        <a href="https://github.com/simenoff/imageParser" target="_blank">https://github.com/simenoff/imageParser</a>
+        <br><br>
+        <a href="https://hh.ru/resume/3e5f8068ff0ba7e4bf0039ed1f495877344764" target="_blank">https://hh.ru/resume/3e5f8068ff0ba7e4bf0039ed1f495877344764</a>
+    </div>
+</div>
 </body>
 </html>';
 
@@ -80,7 +84,7 @@ function parser(string $url): string {
         return 'Изображения на странице не найдены';
 
 
-    // Приводим URLs к абсолютному виду
+    // Приводим URLs изображений к абсолютному виду
     $base_url = parse_url($url, PHP_URL_SCHEME) . '://' . parse_url($url, PHP_URL_HOST);
 
     $full_url = parse_url($url, PHP_URL_SCHEME) . '://' . parse_url($url, PHP_URL_HOST);
