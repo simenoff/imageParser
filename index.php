@@ -65,7 +65,7 @@ function parser(string $url): string {
         return 'URL недоступен';
 
     $page = preg_replace('/<script[^>]*>[^<]*<\/script>/Usi', '', $page); // Удаляем коды счётчиков
-    $page = preg_replace('/<noscript[^>]*>[^<]*<\/noscript>/Usi', '', $page); // 
+    $page = preg_replace('/<noscript[^>]*>.*<\/noscript>/Usi', '', $page); // 
 
     $html_dom = new simple_html_dom();
     $html_dom->load($page);
