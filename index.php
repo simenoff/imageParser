@@ -30,7 +30,8 @@ input{font:18px verdana,arial}
 #url{width:400px;font-weight:bold;color:#777}
 #submit{cursor:pointer}
 table{border-collapse:collapse}
-td{padding:15px;border:1px #eee solid;background-color:#f9f9f9;vertical-align: middle}
+td{padding:15px;border:1px #eee solid;background-color:#f9f9f9;vertical-align:middle}
+td:empty{display:none}
 img{max-width:350px;background-color:#fff;border-radius:5px}
 a{color:#09d}a:active{color:#f00}a:hover{color:#f90}
     </style>
