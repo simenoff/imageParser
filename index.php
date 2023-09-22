@@ -29,8 +29,9 @@ body{font:18px verdana,arial;text-align:center}
 input{font:18px verdana,arial}
 #url{width:400px;font-weight:bold;color:#777}
 #submit{cursor:pointer}
-table{border-collapse: collapse}
-td{padding:15px;border:1px #eee solid;background-color:#f9f9f9}
+table{border-collapse:collapse}
+td{margin:0;padding:0;border:1px #eee solid;background-color:#f9f9f9}
+.img{padding:15px}
 img{max-width:350px;background-color:#fff;border-radius:5px}
 a{color:#09d}a:active{color:#f00}a:hover{color:#f90}
     </style>
@@ -130,7 +131,7 @@ function parser(string $url): string {
 
                 $url = $images_url[$i + $j];
 
-                $img = '<a href="' . $url . '" target="_blank"><img src="' . $url . '" alt=""></a>';
+                $img = '<a href="' . $url . '" target="_blank"><div class="img"><img src="' . $url . '" alt=""></div></a>';
 
                 list($page,) = bot($url);
                 $total_size += strlen($page);
@@ -139,7 +140,7 @@ function parser(string $url): string {
                 $img = '';
             }
 
-            $result .= '<td>' . $img . '</td>';
+            $result .= '<td title="' . $url . '">' . $img . '</td>';
         }
         $result .= '</tr>';
 
