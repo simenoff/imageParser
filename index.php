@@ -35,6 +35,7 @@ td:empty{display:none}
 img{max-width:350px;background-color:#fff;border-radius:5px}
 a{color:#09d}a:active{color:#f00}a:hover{color:#f90}
     </style>
+    <meta name=viewport content="width=device-width,initial-scale=1">
 </head>
 <body>
 <div id="center">
